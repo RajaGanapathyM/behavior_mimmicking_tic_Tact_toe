@@ -31,8 +31,8 @@ hidden_layer=tf.tanh(tf.nn.bias_add(tf.layers.conv2d(hidden_layer_1,1,2,strides=
 predicted=tf.layers.conv2d_transpose(hidden_layer,1,2,strides=(1,1))
 
 loss=tf.losses.mean_squared_error(t_playfield,predicted)
-#train_op = tf.train.RMSPropOptimizer(learning_rate=0.01).minimize(loss)
 train_op = tf.train.AdamOptimizer(learning_rate=0.1).minimize(loss)
+
 --------------------------------------------------------------------------------
 
 The above netwrok is trained in real time while playing with the following guidelines,
